@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50;
+}
+
+.chat-container {
+  @apply flex-1 overflow-y-auto mb-4 space-y-4 p-4 rounded-lg bg-white shadow-sm;
+  height: calc(100vh - 180px);
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E0 #EDF2F7;
+}
+
+.chat-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.message {
+  @apply p-4 rounded-lg break-words;
+  max-width: 85%;
+}
+
+.message-user {
+  @apply bg-blue-100 ml-auto;
+}
+
+.message-assistant {
+  @apply bg-gray-100;
+}
+
+.message pre {
+  @apply bg-gray-800 text-white p-4 rounded-lg mt-2 overflow-x-auto;
+}
+
+.message code {
+  @apply font-mono text-sm;
+}
+
+.message p {
+  @apply mb-2;
+}
+
+.message ul, .message ol {
+  @apply ml-4 mb-2;
+}
+
+.loading-dots {
+  @apply flex space-x-1 items-center justify-center;
+}
+
+.loading-dots div {
+  @apply w-2 h-2 bg-gray-600 rounded-full;
+  animation: bounce 0.5s infinite;
+}
+
+.loading-dots div:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.loading-dots div:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
